@@ -3,6 +3,7 @@
 # include <iostream>
 # include <string>
 # include "Contact.hpp"
+# include <iomanip>
 
 
 class PhoneBook
@@ -10,11 +11,15 @@ class PhoneBook
 	private:
 		Contact _contacts[8];
 		int _isfull;
-		int _index;
+		int _qtd;
 
 	public:
 		PhoneBook(void);
 		~PhoneBook(void);
+		void add_contact(Contact contact);
+		void display_contacts();
+		void get_contact(int index);
+
 };
 
 #endif

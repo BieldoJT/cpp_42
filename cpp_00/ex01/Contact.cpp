@@ -3,20 +3,19 @@
 
 Contact::Contact(){}
 
-Contact::Contact(std::string first_name,
-				std::string last_name,
-				std::string nickname,
-				std::string phone_number,
-				std::string darkest_secret)
+Contact::Contact(std::string *list_input)
 {
-	_first_name = first_name;
-	_last_name = last_name;
-	_nickname = nickname;
-	_phone_number = phone_number;
-	_darkest_secret = darkest_secret;
+	_first_name = list_input[0];
+	_last_name = list_input[1];
+	_nickname = list_input[2];
+	_phone_number = list_input[3];
+	_darkest_secret = list_input[4];
+	std::cout << "Contact criado\n" << std::endl;
 }
 
-Contact::~Contact(){}
+Contact::~Contact()
+{
+}
 
 std::string Contact::get_first_name()
 {

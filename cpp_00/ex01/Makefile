@@ -5,7 +5,7 @@ CCXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 
 
-SRCS = contact.cpp
+SRCS = Contact.cpp PhoneBook.cpp main.cpp
 
 
 all: $(NAME)
