@@ -65,6 +65,13 @@ void PhoneBook::get_contact(int index)
 		std::cout << "Digite um index válido" << std::endl;
 		return ;
 	}
+	Contact contact = _contacts[index - 1];
+	std::cout <<
+	"First name: " << contact.get_first_name() << std::endl <<
+	"Last name: " << contact.get_last_name() << std::endl <<
+	"nick name: " << contact.get_nick_name() << std::endl <<
+	"Phone number: " << contact.get_phone_number() << std::endl <<
+	"darkest secret: " << contact.get_darkest_secret() << std::endl;
 
 
 

@@ -1,4 +1,4 @@
-NAME = phonebook
+NAME = phonebook_system
 
 CCX = c++
 CCXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
