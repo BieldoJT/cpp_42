@@ -1,6 +1,6 @@
 NAME = brainz
 
-CCX = c++
+CCX = g++ #g++  no mec, c++ no resto
 CCXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 
