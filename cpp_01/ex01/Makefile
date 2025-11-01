@@ -1,0 +1,24 @@
+NAME = brainz
+
+CCX = c++ #g++  no mec, c++ no resto
+CCXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+
+
+
+SRCS = Zombie.cpp main.cpp randomChump.cpp newZombie.cpp
+
+
+all: $(NAME)
+
+$(NAME):
+	$(CCX) $(CCXFLAGS) $(SRCS) -o $(NAME)
+	@clear
+	@echo "✅ ${NAME} is compiled."
+
+
+clean:
+	@rm -rf $(NAME)
+	@clear
+	@echo "🗑️ executable removed."
+
+re: clean all
