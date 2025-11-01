@@ -5,7 +5,7 @@ CCXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 
 
-SRCS = Zombie.cpp main.cpp randomChump.cpp newZombie.cpp
+SRCS = Zombie.cpp main.cpp ZombieHorde.cpp
 
 
 all: $(NAME)
