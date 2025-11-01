@@ -1,11 +1,11 @@
 NAME = brainz
 
-CCX = g++ #g++  no mec, c++ no resto
+CCX = c++ #g++  no mec, c++ no resto
 CCXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 
 
-SRCS = Zombie.cpp main.cpp
+SRCS = Zombie.cpp main.cpp randomChump.cpp newZombie.cpp
 
 
 all: $(NAME)
