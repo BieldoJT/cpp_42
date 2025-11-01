@@ -3,7 +3,7 @@
 HumanA::HumanA(std::string _name, Weapon &weapon): _weapon(weapon)
 {
 	name = _name;
-	_weapon = weapon;
+	std::cout << "Human A " << name << "created with weapon "<< _weapon.get_type() << std::endl;
 }
 
 HumanA::~HumanA()
