@@ -14,5 +14,4 @@ HumanA::~HumanA()
 void HumanA::attack(void)
 {
 	std::cout << name << " attacks with their " << _weapon.get_type() << std::endl;
-	//https://github.com/tblaase/CPP-Module-01/blob/main/ex03/src/HumanB.cpp pra eu me basear
 }
