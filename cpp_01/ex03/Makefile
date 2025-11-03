@@ -1,6 +1,6 @@
 NAME = war
 
-CCX = c++ #g++  no mec, c++ no resto
+CCX = c++
 CCXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 
