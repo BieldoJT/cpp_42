@@ -14,15 +14,15 @@ Weapon::Weapon(const std::string& _type)
 
 Weapon::~Weapon(void)
 {
-	std::cout <<"Weapon "<< this->get_type() << "is destroyed" << std::endl;
+	std::cout <<"Weapon "<< this->getType() << "is destroyed" << std::endl;
 }
 
-std::string Weapon::get_type() const
+std::string Weapon::getType() const
 {
 	return type;
 }
 
-void Weapon::set_type(std::string& _type)
+void Weapon::setType(std::string _type)
 {
 	type = _type;
 }

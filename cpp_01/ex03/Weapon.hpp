@@ -14,8 +14,8 @@ class Weapon
 		//destructor
 		~Weapon(void);
 		//getters and setters
-		std::string get_type() const;
-		void set_type(std::string& _type);
+		std::string getType() const;
+		void setType(std::string _type);
 };
 
 #endif
