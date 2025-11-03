@@ -1,11 +1,11 @@
-NAME = replacer
+NAME = harl
 
 CCX = c++
 CCXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 
 
-SRCS = main.cpp
+SRCS = main.cpp Harl.cpp
 
 
 all: $(NAME)
