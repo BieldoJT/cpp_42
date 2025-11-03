@@ -1,4 +1,4 @@
-NAME = brain
+NAME = adress
 
 CCX = c++
 CCXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
