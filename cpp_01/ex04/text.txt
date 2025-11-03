@@ -1,6 +1,0 @@
-aqui tem uma linha
-aqui tem outra linha
-
-linha apos uma quebra de linha
-outra linha aaa
-ultima linha

@@ -1,6 +1,22 @@
 #include <iostream>
 #include <fstream>
 
+std::string replace(std::string line, const std::string search, const std::string replace)
+{
+	size_t	erase_length = search.length();
+	size_t	replace_length = replace.length();
+	size_t	pos_search = 0;
+
+	pos_search = line.find(search);
+	while (pos_search != std::string::npos)
+	{
+		line.erase(pos_search, erase_length);
+		line.insert(pos_search, replace);
+		pos_search = line.find(search, pos_search + replace_length);
+	}
+	return (line);
+}
+
 int main(int argc, char **argv)
 {
 	if (argc != 4)
@@ -12,7 +28,6 @@ int main(int argc, char **argv)
 	std::ifstream archive_in;
 	std::ofstream archive_out;
 
-	//verificando se deu pra abrir o arquivo
 	archive_in.open(filename.c_str());
 	filename_out = filename + ".replace";
 	archive_out.open(filename_out.c_str());
@@ -37,17 +52,13 @@ int main(int argc, char **argv)
 		return 1;
 	}
 
-	std::cout<< "strings s1 e s2: " << s1<<" " << s2 << std::endl;
 	std::string line;
 	while(std::getline(archive_in, line))
 	{
-		std::cout << line << std::endl;
-		archive_out << line << std::endl;
-
+		std::string new_line = replace(line, s1, s2);
+		archive_out << new_line << std::endl;
 	}
 	archive_in.close();
 	archive_out.close();
 	return 0;
-
-
 }
