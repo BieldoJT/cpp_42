@@ -39,6 +39,7 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &copy)
 		this->_attackDamage = copy._attackDamage;
 		this->_is_guarding = copy._is_guarding;
 	}
+	std::cout << "Assigment operator called!!!" << std::endl;
 	return *this;
 }
 
@@ -46,6 +47,14 @@ void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap " << this->_name << " is now in Gate Keaper mode" << std::endl;
 	this->_is_guarding = true;
+}
+
+void ScavTrap::status()
+{
+	if(this->_is_guarding)
+		std::cout << "ScavTrap " << this->getName() << " is guarding!!" << std::endl;
+	else
+		std::cout << "ScavTrap " << this->getName() << " is doing nothing!!" << std::endl;
 }
 
 

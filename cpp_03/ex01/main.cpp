@@ -3,25 +3,30 @@
 void	thomas_rundown(void)
 {
 	ScavTrap thomas("Thomas");
+	ClapTrap alice("Alice");
 
 	thomas.attack("Bob");
-	thomas.attack("Diana");
+	alice.attack("Diana");
 	thomas.attack("Elisa");
-	thomas.attack("Fred");
+	alice.attack("Fred");
 	thomas.attack("Gemma");
-	thomas.attack("Henry");
-	thomas.attack("Isabella");
-	thomas.attack("Jack");
-	thomas.attack("Kevin");
-	thomas.attack("Laura");
-	thomas.attack("Mike");
+	alice.attack("Henry");
+
 }
 
 void	lucas_rundown(void)
 {
 	ScavTrap lucas("Lucas");
-
+	ScavTrap daniel("Daniel");
+	ClapTrap jason("Jason");
 	lucas.guardGate();
+	lucas.status();
+	daniel.status();
+
+	jason = daniel;
+	jason.attack("Someone");
+
+
 }
 
 void	bob_rundown(void)
