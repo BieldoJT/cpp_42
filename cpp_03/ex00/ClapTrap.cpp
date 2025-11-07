@@ -10,13 +10,16 @@ ClapTrap::ClapTrap(void)
 
 ClapTrap::ClapTrap(std::string const &name)
 {
-	std::cout << "ClapTrap created" << std::endl;
+	std::cout << "ClapTrap " <<name<< " created"  << std::endl;
 	this->_name = name;
+	this->_hitPoints = 10;
+	this->_energyPoints = 10;
+	this->_attackDamage = 0;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "ClapTrap destroyed" << std::endl;
+	std::cout << "ClapTrap "<<this->_name<< " destroyed" << std::endl;
 }
 
 ClapTrap::ClapTrap(ClapTrap const &copy)
@@ -77,23 +80,23 @@ void ClapTrap::attack(const std::string& target)
 	std::cout << "ClapTrap "<<this->getName()
 	<<" attacks "<< target
 	<<", causing "<<this->getAttackDamage()
-	<<" points of damage!";
+	<<" points of damage!"<< std::endl;
+	this->_energyPoints--;
 
 }
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "ClapTrap "<<this->getName()
 	<<" was attacked and took "<< amount
-	<<"of damage."<<this->getAttackDamage()
-	<<" points of damage!";
+	<<" of damage."<< std::endl;
 
-	this->_hitPoints - amount;
+	this->_hitPoints-=amount;
 }
 void ClapTrap::beRepaired(unsigned int amount)
 {
 	std::cout << "ClapTrap "<<this->getName()
 	<<" restored "<< amount
-	<<"of damage."<<this->getAttackDamage()
-	<<" points of damage!";
-	this->_hitPoints + amount;
+	<<" points of hit points." << std::endl;
+	this->_hitPoints+=amount;
+	this->_energyPoints--;
 }

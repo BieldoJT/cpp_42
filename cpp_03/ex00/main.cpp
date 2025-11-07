@@ -25,7 +25,7 @@ void	bob_rundown(void)
 	while (bob.getHitPoints())
 	{
 		bob.takeDamage(2);
-		bob.beRepaired(2);
+		bob.beRepaired(1);
 	}
 	bob.takeDamage(1);
 }
