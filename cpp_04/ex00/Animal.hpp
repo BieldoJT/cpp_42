@@ -19,7 +19,7 @@ class Animal
 
 		std::string getType(void) const;
 
-		virtual void makeSound(void) const;
+		virtual void makeSound(void) const; //adding 'vitual' make it able to override the function
 };
 
 #endif
