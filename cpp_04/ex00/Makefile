@@ -5,7 +5,7 @@ CCXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 
 
-SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp
+SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp WrongAnimal.cpp WrongCat.cpp
 
 
 all: $(NAME)
