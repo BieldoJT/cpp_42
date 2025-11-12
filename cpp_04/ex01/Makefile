@@ -1,11 +1,11 @@
-NAME = clap
+NAME = Animals
 
 CCX = c++
 CCXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 
 
-SRCS = main.cpp ClapTrap.cpp
+SRCS = main.cpp Dog.cpp Cat.cpp Animal.cpp Brain.cpp
 
 
 all: $(NAME)
