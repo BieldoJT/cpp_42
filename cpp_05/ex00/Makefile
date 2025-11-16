@@ -1,4 +1,4 @@
-NAME = Animals
+NAME = Bureaucrats
 
 CCX = c++
 CCXFLAGS = -Wall -Wextra -Werror -std=c++98 -g

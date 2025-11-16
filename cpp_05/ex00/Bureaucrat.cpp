@@ -1,5 +1,7 @@
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat(): _name("Default"), _grade(150){}
+
 Bureaucrat::Bureaucrat(std::string const name, int const note)
 	: _name(name), _grade(note)
 {
@@ -9,17 +11,30 @@ Bureaucrat::Bureaucrat(std::string const name, int const note)
 			throw GradeTooHighException();
 		if (note > 150)
 			throw GradeTooLowException();
-		std::cout << "created" << std::endl;
+		std::cout << "Bureaucrat " << name <<  " created" << std::endl;
 	}
-	catch (std::exception &e) {
-        std::cout << "Erro ao criar objeto: " << e.what() << std::endl;
-        throw; // <= re-lança a MESMA exceção pra fora
-    }
+	catch (std::exception &e)
+	{
+		std::cout << "Failed to create Bureaucrat "<< name <<": " << e.what() << std::endl;
+		throw;
+	}
 }
 
 Bureaucrat::~Bureaucrat()
 {
-	std::cout << "Destroyed" << std::endl;
+	std::cout << "Bureaucrat " << this->_name <<" destroyed" << std::endl;
+}
+
+Bureaucrat::Bureaucrat(Bureaucrat const &copy): _name(copy._name), _grade(copy.getGrade()){}
+
+Bureaucrat &Bureaucrat::operator=(Bureaucrat const &copy)
+{
+	if(this != &copy)
+	{
+		// _name is const and cannot be reassigned, so I only copy the grade
+		this->_grade = copy.getGrade();
+	}
+	return *this;
 }
 
 std::string Bureaucrat::getName() const
@@ -27,24 +42,57 @@ std::string Bureaucrat::getName() const
 	return this->_name;
 }
 
-/*
-// 1. Opcional: Criar uma classe de exceção personalizada herdando de std::exception
-class ErroDeValidacao : public std::exception {
-public:
-    const char* what() const noexcept override {
-        return "Erro de validacao: O valor deve ser positivo.";
-    }
-};
+int Bureaucrat::getGrade() const
+{
+	return this->_grade;
+}
 
-// 2. Método (função) que pode lançar uma exceção
-void processar_valor(int valor) {
-    if (valor <= 0) {
-        // Lança a exceção se a condição de erro for detectada
-        throw ErroDeValidacao();
-    }
-    // Lógica de processamento se o valor for válido
-    std::cout << "Valor processado com sucesso: " << valor << std::endl;
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Grade is too high";
+}
 
-	TENTAR FAZER ISSOO !!!!!!!!!!!!!!!!!!!
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Grade is too low";
+}
 
-} */
+void Bureaucrat::incrementGrade()
+{
+	try
+	{
+		if(this->_grade == 1)
+			throw GradeTooHighException();
+		else
+			this->_grade--;
+	}
+	catch(std::exception &e)
+	{
+		std::cout << "Failed to increment Bureaucrat "<< this->_name <<" grade: " << e.what() << std::endl;
+		throw;
+	}
+}
+
+void Bureaucrat::decrementGrade()
+{
+	try
+	{
+		if(this->_grade == 150)
+			throw GradeTooLowException();
+		else
+			this->_grade++;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "Failed to decrement Bureaucrat "<< this->_name <<" grade: " << e.what() << std::endl;
+		throw;
+	}
+
+}
+
+std::ostream& operator<<(std::ostream& out, Bureaucrat &obj)
+{
+	out << obj.getName() << ", bureaucrat grade " << obj.getGrade();
+	return out;
+}
+

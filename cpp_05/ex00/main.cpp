@@ -3,18 +3,22 @@
 int main()
 {
 	try{
-		Bureaucrat teste("EU", 2);
-		Bureaucrat teste2("tu", -2);
-		Bureaucrat teste3("eles", 200);
+		Bureaucrat A("A", 2);
+		Bureaucrat B("B", 1);
+		Bureaucrat C("C", 150);
+
+		A.incrementGrade();
+		std::cout << A << std::endl;
+
+		B.decrementGrade();
+		std::cout << B << std::endl;
+
+		C.decrementGrade();
+		std::cout << C << std::endl;
 	}
-	 catch (std::exception &e)
-    {
-        std::cout << "Peguei uma excecao ao criar Bureaucrat: "
-                  << e.what() << std::endl;
-    }
-	/*
-	std::cout << teste.getName() << std::endl;
-	std::cout << teste2.getName() << std::endl;
-	std::cout << teste3.getName() << std::endl;
-	*/
+	catch (std::exception &e)
+	{
+		std::cout << "Peguei uma excecao : "
+			<< e.what() << std::endl;
+	}
 }
