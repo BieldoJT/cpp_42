@@ -15,7 +15,7 @@ Bureaucrat::Bureaucrat(std::string const name, int const note)
 	}
 	catch (std::exception &e)
 	{
-		std::cout << "Failed to create Bureaucrat "<< name <<": " << e.what() << std::endl;
+		std::cerr << "Failed to create Bureaucrat "<< name <<": " << e.what() << std::endl;
 		throw;
 	}
 }
@@ -68,7 +68,7 @@ void Bureaucrat::incrementGrade()
 	}
 	catch(std::exception &e)
 	{
-		std::cout << "Failed to increment Bureaucrat "<< this->_name <<" grade: " << e.what() << std::endl;
+		std::cerr << "Failed to increment Bureaucrat "<< this->_name <<" grade: " << e.what() << std::endl;
 		throw;
 	}
 }
@@ -84,7 +84,7 @@ void Bureaucrat::decrementGrade()
 	}
 	catch (std::exception &e)
 	{
-		std::cout << "Failed to decrement Bureaucrat "<< this->_name <<" grade: " << e.what() << std::endl;
+		std::cerr << "Failed to decrement Bureaucrat "<< this->_name <<" grade: " << e.what() << std::endl;
 		throw;
 	}
 

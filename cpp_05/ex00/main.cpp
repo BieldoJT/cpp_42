@@ -2,10 +2,11 @@
 
 int main()
 {
+	Bureaucrat A("A", 2);
+	Bureaucrat B("B", 1);
+	Bureaucrat C("C", 150);
 	try{
-		Bureaucrat A("A", 2);
-		Bureaucrat B("B", 1);
-		Bureaucrat C("C", 150);
+
 
 		A.incrementGrade();
 		std::cout << A << std::endl;
