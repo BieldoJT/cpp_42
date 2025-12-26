@@ -5,11 +5,16 @@
 
 class ShrubberyCreationForm : public AForm
 {
-	ShrubberyCreationForm();
-	ShrubberyCreationForm(std::string target);
-	ShrubberyCreationForm(const ShrubberyCreationForm &copy);
-	ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
-	~ShrubberyCreationForm();
+	private:
+		std::string _target;
+
+
+	public:
+		ShrubberyCreationForm();
+		ShrubberyCreationForm(std::string target);
+		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
+		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
+		~ShrubberyCreationForm();
 };
 
 
