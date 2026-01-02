@@ -15,6 +15,7 @@ class AForm
 		bool _isSigned;
 		int const _requiredGrade;
 		int const _executeGrade;
+		virtual void action() const = 0;
 
 	public:
 		AForm();
@@ -23,11 +24,15 @@ class AForm
 		AForm &operator=(AForm const &copy);
 		~AForm();
 
+		//getters
 		std::string getName();
 		bool getIsSigned();
 		int getRequireGrade() const;
 		int getExecuteGrade() const;
-		virtual void signForm() = 0;
+		void printStatus();
+		void signForm();
+
+
 
 		void beSigned(Bureaucrat const &bureaucrat);
 

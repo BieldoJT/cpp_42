@@ -1,16 +1,20 @@
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm(NULL, false,  145, 137)
-{}
-
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
- : AForm(target, false, 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyForm", false,  145, 137) ,_target("Default Targert")
 {
-	//criar o arquivo {target}_shrubbery
+
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyForm", false, 145, 137) , _target(target)
+{
+	this->printStatus();
+	std::cout << "Target: " << this->_target << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy): _target(copy._target)
-{}
+{
+
+}
 
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &other)
@@ -25,3 +29,12 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {}
+
+
+void ShrubberyCreationForm::action() const
+{
+	std::cout << "Criei" << std::endl;
+}
+
+
+

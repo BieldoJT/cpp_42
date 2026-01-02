@@ -62,6 +62,14 @@ int AForm::getExecuteGrade() const
 	return this->_executeGrade;
 }
 
+void AForm::printStatus()
+{
+	std::cout << "Name: " << this->getName() << std::endl <<
+	"Require Grade: " << this->getRequireGrade() << std::endl <<
+	"Execution Grade: " << this->getExecuteGrade() << std::endl <<
+	"is signed?: " << this->getIsSigned() << std::endl;
+}
+
 void AForm::signForm()
 {
 	this->_isSigned = true;
