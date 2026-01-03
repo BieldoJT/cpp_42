@@ -7,13 +7,15 @@ ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyForm", fals
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyForm", false, 145, 137) , _target(target)
 {
+	/*
 	this->printStatus();
 	std::cout << "Target: " << this->_target << std::endl;
+	*/
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy): _target(copy._target)
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy): AForm(copy), _target(copy._target)
 {
-
+	*this = copy;
 }
 
 
@@ -33,7 +35,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void ShrubberyCreationForm::action() const
 {
-	std::cout << "Criei" << std::endl;
+	std::cout << "açao tomada" << std::endl;
 }
 
 
