@@ -44,7 +44,7 @@ void RobotomyRequestForm::action() const
 	std::cout << random_int << std::endl;
 
 	if(random_int == 1)
-		std::cout << this->_target << " is robotomized! 🤖" << std::endl;
+		std::cout << "The " << this->_target << " has been robotomized! 🤖" << std::endl;
 	else
 		std::cout << "The robotomy failed! ❌" << std::endl;
 }
