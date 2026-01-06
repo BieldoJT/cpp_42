@@ -1,4 +1,5 @@
 #include "ShrubberyCreationForm.hpp"
+#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(void) : AForm("ShrubberyForm", false,  145, 137) ,_target("Default Targert")
 {
@@ -24,6 +25,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	if(this != &other)
 	{
 		this->_target = other._target;
+		this->setIsSigned(other.getIsSigned());
 	}
 
 	return *this;
@@ -35,8 +37,52 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
 
 void ShrubberyCreationForm::action() const
 {
-	std::cout << "açao tomada" << std::endl;
+	std::ofstream archive((this->_target + std::string("_shrubbery")).c_str());
+
+	if(archive)
+	{
+		archive << "                                                         ." << std::endl;
+		archive << "                                              .         ;" << std::endl;
+		archive << "                 .              .              ;%     ;;" << std::endl;
+		archive << "                   ,           ,                :;%  %;" << std::endl;
+		archive << "                    :         ;                   :;%;'     .," << std::endl;
+		archive << "           ,.        %;     %;            ;        %;'    ,;" << std::endl;
+		archive << "             ;       ;%;  %%;        ,     %;    ;%;    ,%'" << std::endl;
+		archive << "              %;       %;%;      ,  ;       %;  ;%;   ,%;'" << std::endl;
+		archive << "               ;%;      %;        ;%;        % ;%;  ,%;'" << std::endl;
+		archive << "                `%;.     ;%;     %;'         `;%%;.%;'" << std::endl;
+		archive << "                 `:;%.    ;%%. %@;        %; ;@%;%'" << std::endl;
+		archive << "                    `:%;.  :;bd%;          %;@%;'" << std::endl;
+		archive << "                      `@%:.  :;%.         ;@@%;'" << std::endl;
+		archive << "                        `@%.  `;@%.      ;@@%;" << std::endl;
+		archive << "                          `@%%. `@%%    ;@@%;" << std::endl;
+		archive << "                            ;@%. :@%%  %@@%;" << std::endl;
+		archive << "                              %@bd%%%bd%%:;" << std::endl;
+		archive << "                                #@%%%%%:;;" << std::endl;
+		archive << "                                %@@%%%::;" << std::endl;
+		archive << "                                %@@@%(o);  . '" << std::endl;
+		archive << "                                %@@@o%;:(.,'" << std::endl;
+		archive << "                            `.. %@@@o%::;" << std::endl;
+		archive << "                               `)@@@o%::;" << std::endl;
+		archive << "                                %@@(o)::;" << std::endl;
+		archive << "                               .%@@@@%::;" << std::endl;
+		archive << "                               ;%@@@@%::;." << std::endl;
+		archive << "                              ;%@@@@%%:;;;." << std::endl;
+		archive << "                          ...;%@@@@@%%:;;;;,.." << std::endl;
+
+		archive.close();
+	}
+	else
+		throw ShrubberyCreationForm::FileCreationException();
 }
+
+const char *ShrubberyCreationForm::FileCreationException::what() const throw()
+{
+	return ("Failed to create and write on file!");
+}
+
+
+
 
 
 

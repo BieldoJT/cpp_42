@@ -47,9 +47,14 @@ std::string AForm::getName()
 	return this->_name;
 }
 
-bool AForm::getIsSigned()
+bool AForm::getIsSigned() const
 {
 	return this->_isSigned;
+}
+
+void AForm::setIsSigned(bool is_Signed)
+{
+	this->_isSigned = is_Signed;
 }
 
 int AForm::getRequireGrade() const

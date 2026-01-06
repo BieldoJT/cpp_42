@@ -9,13 +9,13 @@ int main()
 	ShrubberyCreationForm shushu("Eu");
 	ShrubberyCreationForm teste("algo");
 
+	std::cout << "PRimeiro printt\n";
 	std::cout << shushu << std::endl;
 	a.signForm(shushu);
-
-	shushu.execute(b);
-	//teste.execute(b);
-
-	a.executeForm(shushu);
-	shushu.signForm();
 	std::cout << shushu << std::endl;
+	shushu.execute(b);
+
+	teste = shushu;
+	teste.execute(b);
+	std::cout << teste << std::endl;
 }

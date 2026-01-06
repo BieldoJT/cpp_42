@@ -26,7 +26,8 @@ class AForm
 
 		//getters
 		std::string getName();
-		bool getIsSigned();
+		bool getIsSigned() const;
+		void setIsSigned(bool is_Signed);
 		int getRequireGrade() const;
 		int getExecuteGrade() const;
 		void printStatus();
