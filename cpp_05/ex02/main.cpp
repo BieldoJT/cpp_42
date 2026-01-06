@@ -1,6 +1,7 @@
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include "AForm.hpp"
 #include <cstdlib>
 #include <ctime>
@@ -11,8 +12,8 @@ int main()
 	std::srand(std::time(0));
 	Bureaucrat a("Ana",2);
 	Bureaucrat b("kamila", 1);
-	RobotomyRequestForm shushu("Eu");
-	RobotomyRequestForm teste("algo");
+	PresidentialPardonForm shushu("Eu");
+	PresidentialPardonForm teste("algo");
 
 
 	std::cout << "PRimeiro printt\n";
