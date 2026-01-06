@@ -1,13 +1,19 @@
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 #include "AForm.hpp"
+#include <cstdlib>
+#include <ctime>
 
 int main()
 {
+	// for the random number generator in robotomyform action, used to created a new sequence in diferend executions
+	std::srand(std::time(0));
 	Bureaucrat a("Ana",2);
 	Bureaucrat b("kamila", 1);
-	ShrubberyCreationForm shushu("Eu");
-	ShrubberyCreationForm teste("algo");
+	RobotomyRequestForm shushu("Eu");
+	RobotomyRequestForm teste("algo");
+
 
 	std::cout << "PRimeiro printt\n";
 	std::cout << shushu << std::endl;
@@ -15,7 +21,9 @@ int main()
 	std::cout << shushu << std::endl;
 	shushu.execute(b);
 
+
+
 	teste = shushu;
-	teste.execute(b);
+	//teste.execute(b);
 	std::cout << teste << std::endl;
 }
