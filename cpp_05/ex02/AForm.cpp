@@ -92,7 +92,7 @@ void AForm::execute(Bureaucrat const &executor) const
 {
 	if(this->_isSigned == false)
 		throw IsNotSignedException();
-	if(executor.getGrade() > this->getRequireGrade())
+	if(executor.getGrade() > this->getExecuteGrade())
 		throw GradeTooLowException();
 
 	this->action();
