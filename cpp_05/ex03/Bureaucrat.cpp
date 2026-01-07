@@ -120,7 +120,10 @@ void Bureaucrat::executeForm(AForm &form)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << std::endl;
+		std::cerr<< this->getName()
+		<< " couldn't execute " << form.getName()
+		<< " because "<< e.what() << std::endl;
+		throw;
 	}
 
 }

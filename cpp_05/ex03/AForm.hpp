@@ -22,7 +22,8 @@ class AForm
 		AForm(std::string name, bool is_signed, int required_grade, int execute_grade);
 		AForm(AForm const &copy);
 		AForm &operator=(AForm const &copy);
-		~AForm();
+		//made virtual to be able to user the right destructor
+		virtual ~AForm();
 
 		//getters
 		std::string getName();
