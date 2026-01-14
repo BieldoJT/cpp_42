@@ -69,4 +69,32 @@ void	convertInt(const std::string &str)
 
 }
 
+void	convertFloat(const std::string &str)
+{
+	float	f = std::atof(str.c_str());
+	bool	limit = std::fabs(f - static_cast<int>(f)) < 0.0000000000001;
+
+	std::cout << "char: ";
+	if (f < 0 || f > 127)
+		std::cout << "impossible" << std::endl;
+	else
+	{
+		if (isprint(f))
+			std::cout << "'" << static_cast<char>(f) << "'" << std::endl;
+		else
+			std::cout << "Non displayable" << std::endl;
+	}
+	std::cout << "int: ";
+	if (static_cast<long>(f) < MIN_INT || static_cast<long>(f) > MAX_INT)
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << static_cast<int>(f) << std::endl;
+	std::cout << "float: ";
+	if (f < MIN_FLOAT || f > MAX_FLOAT)
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << f << (limit ? ".0f" : "f") << std::endl;
+	std::cout << "double: " << static_cast<double>(f) << (limit ? ".0" : "") << std::endl;
+}
+
 
