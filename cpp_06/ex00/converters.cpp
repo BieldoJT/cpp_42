@@ -25,4 +25,48 @@ void	printSpecial(const std::string &str)
 	}
 }
 
+void	convertChar(const std::string &str, size_t &len)
+{
+	char	c = 0;
+
+	if (len == 1)
+		c = str[0];
+	else
+		c = str[1];
+	std::cout << "char: ";
+	if (isprint(c))
+	{
+		std::cout << "'" << c << "'" << std::endl;
+		std::cout << "int: " << static_cast<int>(c) << std::endl;
+		std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
+		std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
+	}
+	else
+		std::cout << "Non displayable" << std::endl;
+}
+
+void	convertInt(const std::string &str)
+{
+	long	l = std::atol(str.c_str());
+
+	std::cout << "char: ";
+	if (l < 0 || l > 127)
+		std::cout << "impossible" << std::endl;
+	else
+	{
+		if (isprint(l))
+			std::cout << "'" << static_cast<char>(l) << "'" << std::endl;
+		else
+			std::cout << "Non displayable" << std::endl;
+	}
+	std::cout << "int: ";
+	if (l < MIN_INT || l > MAX_INT)
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout	<< static_cast<int>(l) << std::endl;
+	std::cout << "float: " << static_cast<float>(l) << ".0f" << std::endl;
+	std::cout << "double: " << static_cast<double>(l) << ".0" << std::endl;
+
+}
+
 
