@@ -1,4 +1,4 @@
-#include " ScalarConverter.hpp"
+#include "ScalarConverter.hpp"
 
 static int IsSpecial(const std::string &str)
 {

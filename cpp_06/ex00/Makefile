@@ -1,11 +1,11 @@
-NAME = converter
+NAME = convert
 
 CCX = c++
 CCXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
 
 
-SRCS = main.cpp
+SRCS = main.cpp converters.cpp ScalarConverter.cpp which_type.cpp
 
 
 all: $(NAME)
