@@ -1,4 +1,4 @@
-NAME = serializer
+NAME = Base
 
 CCX = c++
 CCXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
