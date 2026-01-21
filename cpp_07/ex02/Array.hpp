@@ -50,6 +50,36 @@ public:
 		delete[] _data;
 	}
 
+
+	class OutOfBoundsException : public std::exception
+	{
+		public:
+			virtual const char* what() const throw()
+			{
+				return "Array: index out of bounds";
+			}
+	}
+
+
+	T& operator[](std::size_t index)
+	{
+		if (index >= _size)
+			throw OutOfBoundsException();
+		return _data[index];
+	}
+
+	const T& operator[](std::size_t index) const
+	{
+		if (index >= _size)
+			throw OutOfBoundsException();
+		return _data[index];
+	}
+
+	std::size_t size() const
+	{
+		return _size;
+	}
+
 };
 
 
