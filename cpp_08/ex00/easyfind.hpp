@@ -20,7 +20,7 @@ typename T::iterator easyfind(T &list, int n)
 
 	index = std::find(list.begin(), list.end(), n);
 	if (index == list.end())
-		throw NotFoundExeption;
+		throw NotFoundExeption();
 	return index;
 }
 
