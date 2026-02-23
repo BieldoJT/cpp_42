@@ -2,6 +2,14 @@
 #include <iostream>
 
 int main(){
-	std::cout << "Rodando" << std::endl;
+
+		Span teste(3);
+
+		teste.addNumber(4);
+		teste.addNumber(2);
+		teste.addNumber(1);
+		teste.addNumber(5);
+
 	return 0;
 }
+
