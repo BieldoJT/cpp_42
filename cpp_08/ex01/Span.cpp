@@ -34,16 +34,15 @@ void Span::addNumber(unsigned int N)
 			throw LimitReached();
 		this->listElements.push_back(N);
 
-		std::list<unsigned int> list = this->listElements;
-		std::list<unsigned int>::iterator it;
-
-		for(it = list.begin(); it != list.end(); ++it){
-			std::list<unsigned int>::iterator num = it;
-			std::cout << *it;
-				if(++num != list.end())
-					std::cout << ",";
-		}
-		std::cout << "\n";
+		//std::list<unsigned int> list = this->listElements;
+		//std::list<unsigned int>::iterator it;
+		//for(it = list.begin(); it != list.end(); ++it){
+		//	std::list<unsigned int>::iterator num = it;
+		//	std::cout << *it;
+		//		if(++num != list.end())
+		//			std::cout << ",";
+		//}
+		//std::cout << "\n";
 	}
 	catch(std::exception &e){
 		std::cout << "\033[1;31m" << e.what() << "\033[0m" << std::endl;
