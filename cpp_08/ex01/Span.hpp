@@ -18,8 +18,18 @@ class Span
 		class LimitReached : public std::exception{
 			virtual const char* what() const throw();
 		};
+		class NoNumbersInTheList : public std::exception{
+			virtual const char* what() const throw();
+		};
+		class OneNumberOnTheList : public std::exception{
+			virtual const char* what() const throw();
+		};
 
 		void addNumber(unsigned int N);
+		int shortestSpan();
+		int longestSpan();
+
+		void addNumber(std::list<unsigned int>::iterator begin, std::list<unsigned int>::iterator end);
 
 	private:
 		unsigned int _maxSize;
