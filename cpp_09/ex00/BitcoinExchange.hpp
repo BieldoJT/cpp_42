@@ -27,6 +27,13 @@ public:
 	//member functions
 	int	loadDatabase();
 	int	loadInputData(const char* fileName);
+
+	std::map<std::string, double> getDatabase();
+	std::list<std::pair<std::string, int>> getInput();
+
+//	void printDatabase();
 };
+
+bool isValidNumber(const std::string& s);
 
 #endif

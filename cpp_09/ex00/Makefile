@@ -1,6 +1,7 @@
 C++ = c++
 C++_FLAGS = -Wall -Wextra -Werror -std=c++98
 INFILES = 	main.cpp\
+			BitcoinExchange.cpp\
 
 OBJFILES = $(INFILES:.cpp=.o)
 
