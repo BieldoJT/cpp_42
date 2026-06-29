@@ -12,6 +12,12 @@
 #include <list>
 #include <algorithm>
 
+#define CURRENT_YEAR 2026
+
+enum Months {
+	JANUARY = 1, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER
+};
+
 class BitcoinExchange
 {
 private:
