@@ -28,6 +28,10 @@ public:
 	int	loadDatabase();
 	int	loadInputData(const char* fileName);
 
+	std::pair<std::string, double>	findPair(std::pair<std::string, double> sourcePair);
+	std::pair<std::string, double>	inputControl(std::pair<std::string, double> pair);
+	void	applyExchangeRate();
+
 	std::map<std::string, double> getDatabase();
 	std::list<std::pair<std::string, int>> getInput();
 
